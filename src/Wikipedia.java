@@ -1,7 +1,6 @@
-// A example of using jsoup from https://github.com/jhy/jsoup/blob/master/src/main/java/org/jsoup/examples/Wikipedia.java
-
-// Explain .jar file import process
-//package org.jsoup.examples;
+/*
+A commented and tweaked example of using jsoup from https://github.com/jhy/jsoup/blob/master/src/main/java/org/jsoup/examples/Wikipedia.java
+*/
 
 // Import Jsoup library to parse HTML documents
 import org.jsoup.Jsoup;
@@ -27,7 +26,8 @@ public class Wikipedia {
         // This selects thumbnail images linked to Wikipedia's "On this day" section
         Elements newsHeadlines = doc.select("#mp-otd .mp-thumb a");
 
-        // Add more arguments above
+        // select all links under the Today's Feature Picture div
+        //Elements newsHeadlines = doc.select("#mp-tfp * a");
         
         // Iterates over the selected elements (thumbnail images)
         for (Element headline : newsHeadlines) {
