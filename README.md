@@ -1,3 +1,7 @@
+# About
+
+This repo is a commented and tweaked example of using jsoup from https://github.com/jhy/jsoup/blob/master/src/main/java/org/jsoup/examples/Wikipedia.java
+
 ## Getting Started
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
