@@ -19,15 +19,24 @@ public class Wikipedia {
     public static void main(String[] args) throws IOException {
         // Connects to Wikipedia's main page and retrieves the HTML content
         Document doc = Jsoup.connect("http://en.wikipedia.org/").get();
-        // Logs the title of the retrieved page
+            //doc variable of Document type
+                // connects to url (wikipedia) with jsoup library
+                    // get method retrieves HTML content from url
+
+        // Logs the title of the retrieved page 
         log(doc.title());
+            // calls the log method
+                // retrieves title of HTML document stored in the doc
 
-        // Selects elements with the class "mp-thumb" that are descendants/nested of an element with the id "mp-otd"
-        // This selects thumbnail images linked to Wikipedia's "On this day" section
-        Elements newsHeadlines = doc.select("#mp-otd .mp-thumb a");
+        //-- Selects elements with the class "mp-thumb" that are descendants/nested of an element with the id "mp-otd"
+        //Elements newsHeadlines = doc.select("#mp-otd .mp-thumb a");
+            // This selects thumbnail images linked to Wikipedia's "On this day" section
 
-        // select all links under the Today's Feature Picture div
-        //Elements newsHeadlines = doc.select("#mp-tfp * a");
+        //-- select all links under the Today's Feature Picture div
+        // Elements newsHeadlines = doc.select("#mp-tfp * a");
+
+        //-- selects only the bold links from "in the news" div
+        Elements newsHeadlines = doc.select("#mp-itn b a");
         
         // Iterates over the selected elements (thumbnail images)
         for (Element headline : newsHeadlines) {
